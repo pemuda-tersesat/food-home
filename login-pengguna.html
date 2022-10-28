@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Pengguna</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!--link rel="stylesheet" href="../icons-css/fontawesome.min.css"/>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-sm-auto" style="padding-top: 10%;">
+        <div class="shadow mb-5 bg-white rounded" style="width: 24rem;">
+          <div class="card" style="width: 24rem;">
+            <div class="card-body">
+              <h3 class="card-title text-center" style="padding-top: auto;">Login Pengguna</h3>
+              <br>
+              <form method="POST" action="" id="form"></form>
+                <div class="form-group">
+                  <label for="email">Username</label>
+                  <input type="text" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password">
+                </div>
+                <div class="row justify-content-between">
+                  <div class="col-sm-auto">
+                    <button type="submit" class="btn btn-primary" onclick="login()" value="l" id="submit">Login</button>
+                  </div>
+                  <div class="col-sm-auto">
+                    <a class="nav-link" href="daftar-pengguna.html">Belum punya akun ?</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <img src="images/login-pengguna.png" class="float-right" style="width: 280%; height: auto; padding-top: 5%;">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <!-- Script login -->
+  <script src="js/user.js"></script>
+</body>
+
+</html>

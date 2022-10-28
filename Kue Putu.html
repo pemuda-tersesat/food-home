@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kue Putu</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="icons-css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Food Space</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home </a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <span class="navbar-text">
+                    <a class="nav-link" href="#exampleModalLong" style="color: #6c757d;" data-toggle="modal" onclick="modal_keranjang()">
+                      <i class="fa fa-shopping-cart"></i><span> Keranjang </span></a>
+                </span>
+                <div id="user">
+        
+                </div>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-auto pad">
+                <img src="images/Kue Putu.jpg" class="img-fluid rounded shadow" alt="Getuk" width="500px">
+            </div>
+
+            <div class="col-md ml-5">
+                <div class="row">
+                    <b style="font-size: 25px; font-family: sans-serif;" id="item">Kue Putu</b>
+                </div>
+
+                <div class="row">
+                    <p style="color: slategrey; font-size: 20px;">
+                        <i class="fa fa-money" id="harga" value=6000 ></i> Rp.6.000,00 per box <br>
+                        <i class="fa fa-building-o"></i> Citra Rasa <br>
+                        <i class="fa fa-phone-square"></i> 08123346721 <br>
+                        <i class="fa fa-location-arrow"></i> Kedung Waringin <br>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn btn-success btn-lg btn-block shadow" data-toggle="modal" data-target="#modal-pesan">
+                        <i class="fa fa-shopping-cart"></i> Masukan ke keranjang
+                    </button>
+
+                    <!-- Modal Pesan-->
+                    <div class="modal fade" id="modal-pesan" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Jumlah Pesanan (box)</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <fieldset disabled>
+                                                <input class="form-control form-control-sm" type="text" placeholder="jumlah box" value=10 id="kolom-jumlah">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <button type="button" class="btn btn-outline-danger btn-sm" id="btn-minus" onclick="minus_click()">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <button type="button" class="btn btn-outline-success btn-sm" id="btn-plus" onclick="plus_click()">
+                                                <i class="fa fa-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-primary" onclick="masuk_keranjang()" data-dismiss="modal">Masukkan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Keranjang -->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        Nama Item
+                                    </div>
+                                    <div class="col">
+                                        Jumlah
+                                    </div>
+                                    <div class="col">
+                                        Harga
+                                    </div>
+                                    <div class="col">
+                                        Hapus
+                                    </div>
+                                </div>
+                                <div id="isi-modal-keranjang">
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary" onclick="red()">Bayar</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <p> Cocok menjadi cemilan anda </p>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group">
+                            <li class="list-group-item active">Isi paket</li>
+                            <li class="list-group-item">Kue Putu 10 buah</li>
+                            <li class="list-group-item">Gula Jawa 1 bungkus</li>
+                            <li class="list-group-item">Meses 1 bungkus</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="background-color: #e9ecef;">
+                        <dv class="row" style="margin-top: 10px;margin-left: 5px;">
+                            <p class="font-weight-normal">Dikirim dalam 1 jam <br /> (setelah pembayaran dikonfirmasi)
+                            </p>
+                        </dv>
+                        <dv class="row" style="margin-top: 10px;margin-left: 5px;">
+                            <p class="font-weight-bold">Pembelian minimal 10 box</p>
+                        </dv>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="js/cart.js"></script>
+    <script src="js/user.js"></script>
+</body>
+
+</html>
